@@ -13,6 +13,14 @@ The Team that will be using the Learning System.
      - Online and Offline 
 
  4. Do you see the use of Gamification in your Learning Delivery 
+ 5. Do you see video as one of the mediums delivery training. 
+ 6. Do you see Image Content as something that you will be using alot. 
+ 7. How Tech Savay are you from 1 to 5. 
+ 8. What is your level of Experiance with HTML 
+     - No Experiance 
+     - Can read and Understand HTML 
+     - Can read and write HTML code 
+     - Can create simple webpages with HTML
 
 
 
