@@ -20,11 +20,12 @@ In todays fast moving world we have to consider how can we better solutions to i
   - Thinkific 
   - podia 
   - KAJABI 
+
  - Good Take aways 
   - No Sophisticated Learning Design 
   - No Complex Assesments 
 
-## LMS 
+## Leaning Management Systems (LMS) 
  - Client Scale 
  - Built for Scale 
  - Hugely Customisable 
@@ -36,6 +37,13 @@ In todays fast moving world we have to consider how can we better solutions to i
   - moodel
   - Blackboard
 
+## Learning Experience Platforms (LXPs)
+ - When Netfix and LMS have a Baby 
+
+
+
+## Reference Information 
+- LLMs vs LPs [https://www.youtube.com/watch?v=ahDA0v9aA8Q]
 
 
 
