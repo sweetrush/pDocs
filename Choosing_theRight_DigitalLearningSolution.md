@@ -1,9 +1,19 @@
 # Choosing a Digital Learning Solutions
 In todays fast moving world we have to consider how can we better solutions to improve effiency of learning and improving staff Capacity. 
 
+The Team that will be using the Learning System. 
+
 ## Questions 
  1. Have you used a Learning Platform or a Learning Management System(LMS) before. 
- 2.  
+ 2.  What type of professionals using the systerms or Learns. 
+ 3. What would the prefered devices for the Learns 
+     - Laptops
+     - Computer PC 
+     - Mobile 
+     - Online and Offline 
+
+ 4. Do you see the use of Gamification in your Learning Delivery 
+
 
 
 ## What do we need to look for. 
@@ -15,7 +25,7 @@ In todays fast moving world we have to consider how can we better solutions to i
  	- Cost Effective 
  	 - Monthly Fee
 
- - Example of some Platforms 
+ - **Example of some Platforms** 
   - Teachable 
   - Thinkific 
   - podia 
@@ -29,6 +39,7 @@ In todays fast moving world we have to consider how can we better solutions to i
  - Client Scale 
  - Built for Scale 
  - Hugely Customisable 
+     - custom code 
  - More Secure 
  - Assessment Friendly 
 
@@ -36,6 +47,11 @@ In todays fast moving world we have to consider how can we better solutions to i
   - Canvas 
   - moodel
   - Blackboard
+  - TalentCards (Mobile Target)
+  - TalentLMS (Mobile and Desktop)
+    - Gamifications 
+  - efront 
+    - extremely customizable (1000+ Participants)
 
 ## Learning Experience Platforms (LXPs)
  - When Netfix and LMS have a Baby 
@@ -43,7 +59,8 @@ In todays fast moving world we have to consider how can we better solutions to i
 
 
 ## Reference Information 
-- LLMs vs LPs [https://www.youtube.com/watch?v=ahDA0v9aA8Q]
+- (LLMs vs LPs)[https://www.youtube.com/watch?v=ahDA0v9aA8Q]
+- (Best LMS)[https://www.youtube.com/watch?v=n-zxq3Itg6w]
 
 
 
