@@ -22,6 +22,16 @@ The Team that will be using the Learning System.
      - Can read and write HTML code 
      - Can create simple webpages with HTML
 
+ 9. When delivering Training what are the pains that you face? 
+ 10. When delivering Training what are the challenges you have with Participants?
+ 11. Do you share Training Delivery with a Co-trainner at time?
+ 12. What Specfic areas do you delver training on?
+ 13. How do you manage Training Participants in terms of enrolling?
+ 14. How many Participants would you say you will train in a Year?
+ 15. How many days throughout the year would you say you will be engaged with training?
+
+
+
 
 
 ## What do we need to look for. 
@@ -51,24 +61,35 @@ The Team that will be using the Learning System.
  - More Secure 
  - Assessment Friendly 
 
- - Leading LMS in the Markets 
-  - Canvas 
-  - moodel
+ - **Leading LMS in the Markets** 
+  - Canvas
+  - Absorb LMS 
+  - schoology LMS 
+  - Moodel LMS
   - Blackboard
   - TalentCards (Mobile Target)
   - TalentLMS (Mobile and Desktop)
     - Gamifications 
   - efront 
     - extremely customizable (1000+ Participants)
+  - Learning Labs LMS / LXPs
+  - Paradiso LMS  
 
 ## Learning Experience Platforms (LXPs)
  - When Netfix and LMS have a Baby 
+ - is A SaaS Solutions 
 
 
 
 ## Reference Information 
-- (LLMs vs LPs)[https://www.youtube.com/watch?v=ahDA0v9aA8Q]
-- (Best LMS)[https://www.youtube.com/watch?v=n-zxq3Itg6w]
+- [LLMs vs LPs](https://www.youtube.com/watch?v=ahDA0v9aA8Q)
+- [Best LMS](https://www.youtube.com/watch?v=n-zxq3Itg6w)
+
+
+
+## Reference About the Solutions 
+- talent LMS : https://www.youtube.com/watch?v=ulxTuHGo4rw
+- Canvas LMS : https://www.youtube.com/watch?v=IJIP0XCy9s0&list=PLit_70db88TTVKUlrn-xdwO02QtVN5JzP
 
 
 
