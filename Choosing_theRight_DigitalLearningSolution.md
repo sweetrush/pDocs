@@ -36,7 +36,8 @@ The Team that will be using the Learning System.
 
 ## What do we need to look for. 
 - Do you need a Platform or a LMS 
-## Platforms** 
+
+## Platforms 
  - Value Prepation:
  	- Out of the Box Designs 
  	- User Friendly 
