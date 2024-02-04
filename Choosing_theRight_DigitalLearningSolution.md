@@ -4,7 +4,7 @@ In todays fast moving world we have to consider how can we better solutions to i
 The Team that will be using the Learning System. 
 
 ## Questions 
- 01. Have you used a Learning Platform or a Learning Management System(LMS) before. 
+ 01. Have you used a Learning Platform or a Learning Management System(LMS) before.
  02.  What type of professionals using the systerms or Learns. 
  03. What would the prefered devices for the Learns 
      - Laptops
@@ -70,7 +70,7 @@ The Team that will be using the Learning System.
  - More Secure 
  - Assessment Friendly 
 
- - **Leading LMS in the Markets** 
+## Leading LMS in the Markets** 
   - Canvas
   - Absorb LMS 
   - schoology LMS 
