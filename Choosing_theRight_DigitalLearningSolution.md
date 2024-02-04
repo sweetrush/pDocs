@@ -89,8 +89,8 @@ The Team that will be using the Learning System.
 
 
 ## Reference About the Solutions 
-- talent LMS : https://www.youtube.com/watch?v=ulxTuHGo4rw
-- Canvas LMS : https://www.youtube.com/watch?v=IJIP0XCy9s0&list=PLit_70db88TTVKUlrn-xdwO02QtVN5JzP
+- [talent LMS](https://www.youtube.com/watch?v=ulxTuHGo4rw)
+- [Canvas LMS](https://www.youtube.com/watch?v=IJIP0XCy9s0&list=PLit_70db88TTVKUlrn-xdwO02QtVN5JzP)
 
 
 
