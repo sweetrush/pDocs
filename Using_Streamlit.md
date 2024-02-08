@@ -22,3 +22,9 @@ st.text_input(":blue[Name]", value="", max_chars=None)  # This will make the lab
 st.text_input(":red[Name]", value="", max_chars=None)   # This will make the label in Red Color 
 
 ```
+
+## Creating Pages 
+```python 
+st.page_link()  # this is the new Page upade for Streamlit.
+
+```
