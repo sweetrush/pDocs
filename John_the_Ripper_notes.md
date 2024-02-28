@@ -2,5 +2,5 @@
 
 ```sh
 
-john --format=[format] --wordlist=[Wordlist] [FileWith_hashtobeCracked]
+john --format=[hashformat] --wordlist=[Wordlist] [FileWith_hashtobeCracked]
 ```
