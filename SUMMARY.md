@@ -6,3 +6,4 @@
 * [Using Streamlit](using\_streamlit.md)
 * [Choosing The right Digital Learning Solution](choosing-the-right-digital-learning-solution.md)
 * [Cloud for the Samoa](cloud-for-the-samoa.md)
+* [Notes About Hydra](hydra_notes.md)
