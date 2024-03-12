@@ -29,4 +29,15 @@ Install-PackageProvider NuGet -Force
 # This install the ExchangeOnlineManagement
 
 Install-Module -Name ExchangeOnlineManagement
+
+```
+
+Now connecting to it with powershell
+```
+connect-exchange 
+```
+You need to login
+
+```
+disconnect-exchange
 ```
