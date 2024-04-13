@@ -13,3 +13,4 @@
 * [PowerShelling in Windows](Powershelling_in_Windows.md)
 * [NMap Commands](useful_Nmap_Commands.md)
 * [Windows Exploit Tools](Windows_Exploit_tools.md)
+* [Linux Commands and Tips](LinuxTipsandTools.md)
