@@ -15,3 +15,4 @@
 * [Windows Exploit Tools](Windows_Exploit_tools.md)
 * [Linux Commands and Tips](LinuxTipsandTools.md)
 * [Configure Linux Display Manually](Manual_graphicDisplaySetting_Linux.md)
+* [Cybersecurity Archecture](Cybersecurity_Architechture_Notes.md)
