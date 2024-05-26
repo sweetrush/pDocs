@@ -1,6 +1,6 @@
-Cybersecurity Architech 
+### Cybersecurity Architech 
 
-Role and Mindset 
+##### Role and Mindset 
 - Talking to the stakeholders involved in the systems 
 - Looking at the areas of the blueprint 
 - Defining the Domains 
@@ -10,7 +10,7 @@ Role and Mindset
 	- Data Infastructure 
 	- Data Resources 
 
-Context to focus and look at 
+##### Context to focus and look at 
 - Bus Context 
 	- How information moves around 
 	- who is involved 
@@ -23,7 +23,7 @@ Context to focus and look at
 	- Alert Systems 
 	- Controls and reviews 
 
-A Cybersecurity LifeCycle 
+##### A Cybersecurity LifeCycle 
 	1. Risk Analysis 
 	2. Policy 
 	3. Arch Design 
@@ -31,7 +31,7 @@ A Cybersecurity LifeCycle
 	5. Management (Admin)
 	6. Audits / Assesment 
 
-A Frame work View (NIST-CS)
+##### A Frame work View (NIST-CS)
 	1. Indentify
 	2. Protect
 	3. Detect 
@@ -39,7 +39,7 @@ A Frame work View (NIST-CS)
 	5. Recover
 
 
-Domain of Operations 
+#### Domain of Operations 
  - Domains
 	1. User (IAM)(Arch)
 		- Federation Access Management
