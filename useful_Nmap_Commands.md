@@ -4,7 +4,7 @@ Install nmap in Ubuntu or Debian
 sudo apt install nmap 
 ```
 
-
+- Testing what TCP ports are open
 ```bash
 nmap sT [IP_toScan][/24] # for Scanning the range of the IP  
 ```
@@ -27,3 +27,7 @@ nmap -Pn -T4 --top-ports [Porttoscan] -A [IPAddressTOVictum]
 nmap -p msrpc,http,apex-mesh  [IPAddressTOVictum] 
 ```
 
+- Checking the port open and Operating System
+```sh
+nmap -sT -A [IPAddressTOVictum] 
+```
