@@ -14,7 +14,7 @@ nmap sT [IP_toScan][/24] # for Scanning the range of the IP
 nmap -sV -sC -oN [outputfile.extension] -p- [IP_toScan] 
 ```
 
-# used when ICMP ping request is blocked 
+#### used when ICMP ping request is blocked 
 ```bash
 nmap -T4 -Pn -p- -A [IP_toScan] 
 ```
@@ -27,7 +27,7 @@ nmap -Pn -T4 --top-ports [Porttoscan] -A [IPAddressTOVictum]
 nmap -p msrpc,http,apex-mesh  [IPAddressTOVictum] 
 ```
 
-- Checking the port open and Operating System
+#### Checking the port open and Operating System
 ```sh
 nmap -sT -A [IPAddressTOVictum] 
 ```
