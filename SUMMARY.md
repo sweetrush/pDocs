@@ -1,9 +1,12 @@
 # Table of contents
 
-* [pDocs](README.md)
+* [Home](README.md)
+* Dev Ops Area
   * [UsingGit](usinggit.md)
   * [Setup the Python Virutal Enviroment with Anaconda](install\_anaconda\_pythonvirtualenv.md)
+* Steamlit Area
   * [Using Streamlit](using\_streamlit.md)
+* Transforming Digitally 
   * [Choosing The right Digital Learning Solution](choosing-the-right-digital-learning-solution.md)
   * [Cloud for the Samoa](cloud-for-the-samoa.md)
 * Security Area
