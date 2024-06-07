@@ -27,4 +27,35 @@ print(f'{embedding}')
 	- Send retrieved document chucks to LLMs like the Gemini models to summarise a response
 
 
+#### Multimodel RAG
+	- input --> Embeddings Model --> storage --> Retrieval + Generation
 
+
+
+#### Using RAG 
+- Code Examples support
+
+Extracting data from PDF Code Snipit 
+```python
+
+
+from unstructured.partition.pdf import partition_pdf
+pdf_file_name = "NameOfthePDFFile.pdf"
+
+# Extracting the tables, chunk Text from input PDF 
+
+raw_elements = partition_pdf(
+	filename=pdf_file_name,
+	chucking_strategy="by_title",
+	infer_table_structure=True,
+	max_characters=1000,
+	new_after_n_chars=1500,
+	combine_text_under_n_chars=250,
+	strategy="hi_res"
+	);
+
+# Extract images from input PDF 
+pdf_file_path="/path/to/the/imagefile.pdf"
+extract_images_from_pdf(pdf_file_path)
+
+```
