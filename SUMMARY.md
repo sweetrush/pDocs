@@ -21,3 +21,5 @@
 * Linux Write-ups 
   * [Linux Commands and Tips](LinuxTipsandTools.md)
   * [Configure Linux Display Manually](Manual_graphicDisplaySetting_Linux.md)
+* LLM's and AI 
+  * [AI and LLM RAG](RAG_in_AI_n_LLM.md)
