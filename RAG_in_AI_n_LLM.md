@@ -59,3 +59,13 @@ pdf_file_path="/path/to/the/imagefile.pdf"
 extract_images_from_pdf(pdf_file_path)
 
 ```
+
+Organize text from document
+
+tables = []
+texts = []
+for element in raw_elements:
+	if "unstructured.document.elements.Table" in str(type(element)):
+		tables.append(str(element))
+	elif "unstructured.documents.elements.CompositeElement" in str(type(element)):
+	    texts.append(str(element))
