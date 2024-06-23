@@ -10,6 +10,35 @@
  
  1. Giving the prompt a meaningful profile, for example defining its characteristic. 
  2. Defining the Task that it should be doing 
- 3. Defining conditions in terms of proforming the tasks.
+ 3. Defining conditions in terms of performing the tasks.
  4. Defining how to present that information that it will develop or provided. 
  5. Definding additional paramaters that it might need to finetune the results.  
+
+#### 1. Giving Meaning to the Prompt 
+- You would need to define what the prompt agent will be a professional at or what it is good at , usually you can define this as what type of profile you would want the agent to be like for example a professional teacher in physics, or chemestry or other areas of been a teacher. 
+
+
+#### 2. The Task that it should do
+- Remeber the Agent does not know what you are think and would need to understand what you are trying to achieve so defining what it needs to do and what it does not to helps it to be very specific to a topic. to do this you would need to define a few things that you want it to do based on what you are asking. for example writing a document. 
+
+	- Give the document at Title 
+	- Also create a Content page for the comment 
+	- For each section made the Section text bold h4
+	- Keep the language in the level of a Year 13 student
+	- Provide Summary for each section
+	- Provide a detail conclusion
+
+- This is a simple example but there a other ways to use this defining for other types of agents and also the task that they need. 
+
+#### 3. Providing Conditional Task 
+
+- Usually this prompt would provide for areas that are not specific to the core of the the Task at hand which is main the main approach of the Task prompt here you can specify other fine tune ways to breat down other customization of the task prompt. for example define things such as. 
+
+     - Provide version for English and Chinese 
+     - Grammer checks for both language support. 
+     - Using Best practice in terms of going the grammer checks. 
+
+- So depending on the task at hand you would need to consider what could be some fo the areas that would go in to this customization to assist with prompts. conditions and what other paramaters that you seek to make or define. 
+
+#### 3. Presentation View 
+
