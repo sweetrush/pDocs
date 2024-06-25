@@ -40,5 +40,11 @@
 
 - So depending on the task at hand you would need to consider what could be some fo the areas that would go in to this customization to assist with prompts. conditions and what other paramaters that you seek to make or define. 
 
-#### 3. Presentation View 
+#### 4. Presentation View 
+
+- Some system or application you can provide a prompt that will control the presentation of the the results provided by the agent. This would be using statement on how to display the content using different instruction such as the color of the text to use and the type of fonts to use if this is support by the Agent. 
+
+#### 5. Context of Focus 
+
+- Here this is where you now define what your prompt actually need to be done with additional information that you might give it, in other words this is where you give the agent a question or request that it need to perform. Also what is the technical requirement that is requires to complete. 
 
