@@ -7,6 +7,8 @@
 
 ## Thing to know 
 - When building your Engineered prompt you would need to consider the following things about developing a engineered prompt. 
+
+![CombindPrompt](Images/0001/Selection_181.png)
  
  1. Giving the prompt a meaningful profile, for example defining its characteristic. 
  2. Defining the Task that it should be doing 
