@@ -50,3 +50,51 @@
 
 - Here this is where you now define what your prompt actually need to be done with additional information that you might give it, in other words this is where you give the agent a question or request that it need to perform. Also what is the technical requirement that is requires to complete. 
 
+#### Types of Prompt Types 
+
+##### Zero-Shot Prompting
+
+This technique involves providing a direct instruction or question to the LLM without any additional context or examples. It's suitable for straightforward tasks where the model can infer the desired output from the prompt itself.
+
+Example:
+
+    Prompt: Translate "Hello, world!" to Spanish.
+    Expected Output: ¡Hola, mundo!
+
+##### Few-Shot Prompting
+
+In this method, we provide the LLM with a few examples to illustrate the desired output format or task. This helps the model understand the task better and generate more accurate responses.
+
+Example:
+
+    Prompt: Translate the following phrases to French:
+        "Good morning" - Bonjour
+        "Thank you" - Merci
+        "See you later" - À plus tard
+    Input: Good evening
+    Expected Output: Bonsoir
+
+##### Chain-of-Thought (CoT) Prompting
+
+CoT prompting aims to enhance the reasoning capabilities of LLMs by encouraging them to break down complex problems into smaller, more manageable steps. This step-by-step reasoning process is explicitly included in the prompt.
+
+Example:
+
+    Prompt: A basket contains 3 apples and 2 oranges. You add 1 more apple. How many fruits are in the basket now?
+    CoT: First, there were 3 + 2 = 5 fruits. Then, 1 apple was added, so now there are 5 + 1 = 6 fruits.
+    Expected Output: 6
+
+###### Prompt Chaining
+
+This technique involves decomposing a complex task into a sequence of simpler subtasks. The output of each subtask serves as input for the next, forming a chain-like process. This approach is beneficial for tasks that require multiple steps or involve intricate dependencies.
+
+Example:
+
+    Task: Write a short story about a cat who goes on an adventure.
+    Subtask 1: Generate a character description for the cat.
+    Subtask 2: Create a setting for the adventure.
+    Subtask 3: Develop a plot outline with key events.
+    Subtask 4: Write the actual story based on the generated elements.
+
+
+
