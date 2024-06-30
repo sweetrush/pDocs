@@ -24,3 +24,6 @@
 * LLM's and AI 
   * [AI and LLM RAG](RAG_in_AI_n_LLM.md)
   * [Leaning Prompt Engineering](LearningAboutPromptEngineering.md)
+* Future Projects 
+  * NIST Agregator
+  * [DataViz For the Pacific](datavizpacific.md) 
