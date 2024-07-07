@@ -6,7 +6,18 @@
 
 
 
-#### Types of Prompt Types 
+#### Types of Prompts 
+
+## Basic techniques
+
+These are tips that the average user can use to make their prompts better.
+
+    Role-playing. By making the model act as a specific entity, like a historian or a scientist, you can get tailored responses. For example, "As a nutritionist, evaluate the following diet plan" might yield a response grounded in nutritional science.
+    Iterative refinement. Start with a broad prompt and gradually refine it based on the model's responses. This iterative process helps in honing the prompt to perfection.
+    Feedback loops. Use the model's outputs to inform and adjust subsequent prompts. This dynamic interaction ensures that the model's responses align more closely with user expectations over time.
+
+## Advanced technique 
+Here, we see more intricate strategies that require a deeper understanding of the model's behavior
 
 ##### Zero-Shot Prompting
 
