@@ -4,6 +4,16 @@
 
 - In understanding what prompt engineering is about , the engineering of special crafted statements of what , how, and things that a prompt requires. This is in relationship to how to create task, or workflows that the AI model can interpet.
 
+Key Elements of Prompt Engineering
+
+Prompting in Prompt Engineering: The art of developing suitable commands that an AI system can interpret and respond to accurately is pivotal in Prompt Engineering. Designing such prompts, usually articulated in conventional human language, drives pertinent and precise AI responses.
+
+The design considerations generally follow the rules of normal human language, involving:
+
+- Clarity: Unambiguous prompts.
+- Context: Adequate context within the prompt for AI guidance.
+- Precision: Targeted information or desired output.
+- Adaptability: Flexibility with various AI models.
 
 
 #### Types of Prompts 
