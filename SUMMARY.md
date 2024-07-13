@@ -24,9 +24,11 @@
 * LLM's and AI 
   * [AI and LLM RAG](RAG_in_AI_n_LLM.md)
   * [Leaning Prompt Engineering](LearningAboutPromptEngineering.md)
+
+* Docker Write-ups
+  * [Docker Networking](DockerWU/dockernetworking.md)
+
 * Future Projects 
   * NIST Agregator
   * [DataViz For the Pacific](datavizpacific.md)
 
-* Docker Write-ups
-  * [Docker Networking](DockerWU/dockernetworking.md)
