@@ -55,7 +55,7 @@ sudo docker run -itd --rm --network host --name [Name Container] [Name Image]
 
 ```sh 
 sudo docker network create -d macvlan --subnet [Subnet to use] \
- --gateway [LAN Gateway] -o parent=[host NetInterface] \
+ --gateway [LAN Gateway] --o parent=[host NetInterface] \
  [Name of the Network]
 
 # adding containers to the MacVlan Network
@@ -63,5 +63,59 @@ sudo docker run -itd --rm --network [the Network that was created] \
 --ip [Ip to assign to the Container] \
 --name [name of the container] [Name of Image]
 
+# setting the Promiscus mode on the host interface
+# - Check the host in terms other enabling Promiscus 
+sudo ip link set [Interface on Host] promisc on
+
 ```
 
+
+#### The MacVLAN with VLAN Trunks Networking
+```sh 
+sudo docker network create -d macvlan --subnet [Subnet to use] \
+ --gateway [LAN Gateway] -o parent=[host NetInterface].[subinterface Number] \
+ [Name of the Network]
+
+ ```
+
+#### The IPVLAN (l2) networking
+
+``` sh 
+sudo docker network create -d ipvlan \ 
+ --subnet [Subnet to use]/[networkbits] \
+ --gateway [LAN Gateway] \ 
+ -o parent=[host NetInterface] \
+ [Name of the Network]
+
+ # Adding the Container to the Network
+ sudo docker run -itd --rm --network [the Network that was created] \
+--ip [Ip to assign to the Container] \
+--name [name of the container] [Name of Image]
+
+```
+
+#### The IPVLAN (l3) networking
+- In this network the host becomes a rounter
+- you would need to asign a static routes on the router to link 
+- host to the subnets. 
+
+```sh
+sudo docker network create -d ipvlan \ 
+ --subnet [Subnet1 to use]/[networkbits] \ 
+ -o parent=[host NetInterface] \
+ -o ipvlan_mode=l3 \
+ --subnet [Subnet2 to use]/[networkbits] \
+ [Name of the Network]
+
+ # Adding the Containers to the Subnets 
+ sudo docker run -itd --rm --network [name of the L3 network] \
+--ip [assign a ip for Subnet 1] --name [name of Container] [Name of Image]
+
+sudo docker run -itd --rm --network [name of the L3 network] \
+--ip [assign a ip for Subnet 2] --name [name of Container] [Name of Image]
+
+# Repeat this process for assign other containers to the other Subnets 
+```
+
+#### The Non-Network
+- has a default Non network is just there by default. 
