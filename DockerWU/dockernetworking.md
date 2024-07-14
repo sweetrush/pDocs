@@ -42,5 +42,18 @@ sudo docker run -itd --rm --network [Name of the Network] --name [Name Container
 ```
 
 #### The Host Network 
+- A Host network will place close to the host , with all features of the host.
+- the Container runs as a Application
 
-sudo run -t
+```sh
+sudo docker run -itd --rm --network host --name [Name Container] [Name Image]
+```
+
+#### The MacVLAN network 
+- Connecting Docker container directly to a local network
+- they have there own ip address from the network
+
+```sh 
+sudo docker network create -d macvlan --subnet [Subnet to use] \
+ --gateway [LAN Gateway] -o parent=[host NetInterface] \
+ [Name of the Network]
