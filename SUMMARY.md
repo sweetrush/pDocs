@@ -22,8 +22,8 @@
   * [Linux Commands and Tips](LinuxTipsandTools.md)
   * [Configure Linux Display Manually](Manual_graphicDisplaySetting_Linux.md)
 * LLM's and AI 
-  * [AI and LLM RAG](RAG_in_AI_n_LLM.md)
-  * [Leaning Prompt Engineering](LearningAboutPromptEngineering.md)
+  * [AI and LLM RAG](LLMandAI/RAG_in_AI_n_LLM.md)
+  * [Leaning Prompt Engineering](LLMandAI/LearningAboutPromptEngineering.md)
 
 * Docker Write-ups
   * [Docker Networking](DockerWU/dockernetworking.md)
