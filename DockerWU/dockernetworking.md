@@ -57,3 +57,11 @@ sudo docker run -itd --rm --network host --name [Name Container] [Name Image]
 sudo docker network create -d macvlan --subnet [Subnet to use] \
  --gateway [LAN Gateway] -o parent=[host NetInterface] \
  [Name of the Network]
+
+# adding containers to the MacVlan Network
+sudo docker run -itd --rm --network [the Network that was created] \
+--ip [Ip to assign to the Container] \
+--name [name of the container] [Name of Image]
+
+```
+
