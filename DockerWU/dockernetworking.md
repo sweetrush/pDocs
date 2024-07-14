@@ -40,3 +40,7 @@ sudo docker network ls #- list the network
 sudo docker run -itd --rm --network [Name of the Network] --name [Name Container] [Name Image]
 
 ```
+
+#### The Host Network 
+
+sudo run -t
