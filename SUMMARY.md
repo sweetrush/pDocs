@@ -2,7 +2,8 @@
 
 * [Home](README.md)
 * Dev Ops Area
-  * [UsingGit](usinggit.md)
+  * [UsingGit-1](DevOps/usinggit.md)
+  * [UsingGit-1](DevOps/UsingGit.md)
   * [Setup the Python Virutal Enviroment with Anaconda](install\_anaconda\_pythonvirtualenv.md)
 * Steamlit Area
   * [Using Streamlit0](SteamlitArea/using\_streamlit.md)
