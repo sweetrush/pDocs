@@ -9,8 +9,8 @@
   * [Using Streamlit0](SteamlitArea/using\_streamlit.md)
   * [Using Streamlit1](SteamlitArea/Using\_Streamlit.md)
 * Transforming Digitally 
-  * [Choosing The right Digital Learning Solution](choosing-the-right-digital-learning-solution.md)
-  * [Cloud for the Samoa](cloud-for-the-samoa.md)
+  * [Choosing The right Digital Learning Solution](TransformingDigitally/choosing-the-right-digital-learning-solution.md)
+  * [Cloud for the Samoa](TransformingDigitally/cloud-for-the-samoa.md)
 * Security Area
   * [Notes About Hydra](SecArea/hydra_notes.md)
   * [John the Ripper](SecArea/John-the-Ripper-notes.md)
