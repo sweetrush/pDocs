@@ -29,6 +29,7 @@
   * [Linux Commands and Tips](LinuxWriteUps/LinuxTipsandTools.md)
   * [Configure Linux Display Manually](LinuxWriteUps/Manual_graphicDisplaySetting_Linux.md)
   * [Seven AmazingCLI Tools](LinuxWriteUps/sevenAmazingCLI_Tools.md)
+  * [Accessing Remote Servers with SSH Keys](SettingupSSHkey_onLinux.md)
 * LLM's and AI 
   * [AI and LLM RAG](LLMandAI/RAG_in_AI_n_LLM.md)
   * [Leaning Prompt Engineering](LLMandAI/LearningAboutPromptEngineering.md)
