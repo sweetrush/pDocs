@@ -1,24 +1,21 @@
 # Table of contents
+
 * [Home](README.md)
-* Dev Ops Area
+* [Dev Ops Area](dev-ops-area/README.md)
   * [UsingGit-1](DevOps/usinggit.md)
   * [UsingGit-1](DevOps/UsingGit.md)
-  * [Setup the Python Virutal Enviroment with Anaconda](install\_anaconda\_pythonvirtualenv.md)
-  
-* Python
+  * [Setup the Python Virutal Enviroment with Anaconda](dev-ops-area/setup-the-python-virutal-enviroment-with-anaconda.md)
+* [Python](python/README.md)
   * [Install Anaconda Enviroment - 1](Python/Install_Anaconda_PythonVirtualEnv.md)
   * [Install Anaconda Enviroment - 2](Python/install_anaconda_pythonvirtualenv.md)
-
-* Steamlit Area
-  * [Using Streamlit0](SteamlitArea/using\_streamlit.md)
-  * [Using Streamlit1](SteamlitArea/Using\_Streamlit.md)
-
-* Transforming Digitally 
+* [Steamlit Area](steamlit-area/README.md)
+  * [Using Streamlit0](SteamlitArea/using_streamlit.md)
+  * [Using Streamlit1](SteamlitArea/Using_Streamlit.md)
+* [Transforming Digitally](transforming-digitally/README.md)
   * [Choosing The right Digital Learning Solution](TransformingDigitally/choosing-the-right-digital-learning-solution.md)
   * [Cloud for the Samoa](TransformingDigitally/cloud-for-the-samoa.md)
   * [DataVisPacific](TransformingDigitally/datavizpacific.md)
-
-* Security Area
+* [Security Area](security-area/README.md)
   * [Notes About Hydra](SecArea/hydra_notes.md)
   * [John the Ripper](SecArea/John-the-Ripper-notes.md)
   * [MSFVenom notes](SecArea/msfvenom_notes.md)
@@ -27,26 +24,20 @@
   * [NMap Commands](SecArea/useful_Nmap_Commands.md)
   * [Windows Exploit Tools](SecArea/Windows_Exploit_tools.md)
   * [Cybersecurity Archecture](SecArea/Cybersecurity_Architechture_Notes.md)
-
-* Linux Write-ups 
+* [Linux Write-ups](linux-write-ups/README.md)
   * [Linux Commands and Tips](LinuxWriteUps/LinuxTipsandTools.md)
   * [Configure Linux Display Manually](LinuxWriteUps/Manual_graphicDisplaySetting_Linux.md)
   * [Seven AmazingCLI Tools](LinuxWriteUps/sevenAmazingCLI_Tools.md)
   * [Accessing Remote Servers with SSH Keys](LinuxWriteUps/SettingupSSHkey_onLinux.md)
-
-* LLM's and AI 
+* [LLM's and AI](llms-and-ai/README.md)
   * [AI and LLM RAG](LLMandAI/RAG_in_AI_n_LLM.md)
   * [Leaning Prompt Engineering](LLMandAI/LearningAboutPromptEngineering.md)
   * [Running LLM Locally](LLMandAI/runningLLMlocally.md)
-
-* Blockchain 
+* [Blockchain](blockchain/README.md)
   * [Starting with Blockchain](Blockchain/gettingstartwithBlockchain.md)
-
-* Docker Write-ups
+* [Docker Write-ups](docker-write-ups/README.md)
   * [Docker Networking](DockerWU/dockernetworking.md)
-  * [Docker Webservice](DockerWU/SettingUpDockerforWebServices.md)
-
-* Future Projects 
-  * NIST Agregator
-  * [DataViz For the Pacific](datavizpacific.md)
-
+  * [Setup Docker Webservice](DockerWU/SettingUpDockerforWebServices.md)
+* [Future Projects](future-projects/README.md)
+  * [NIST Agregator](future-projects/nist-agregator.md)
+  * [DataViz For the Pacific](future-projects/dataviz-for-the-pacific.md)
