@@ -1,5 +1,4 @@
 # Table of contents
-
 * [Home](README.md)
 * Dev Ops Area
   * [UsingGit-1](DevOps/usinggit.md)
@@ -40,6 +39,7 @@
 
 * Docker Write-ups
   * [Docker Networking](DockerWU/dockernetworking.md)
+  * [Setup Docker Webservice](DockerWU/SettingUpDockerImageforWebServices.md)
 
 * Future Projects 
   * NIST Agregator
