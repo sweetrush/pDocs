@@ -12,4 +12,4 @@ On here we will share about some of the following areas
 - Python Language 
 - Cybersecurity 
 - Streamlit 
-- [more](SUMMARY.md)
+- [more](./SUMMARY.md)
