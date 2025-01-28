@@ -8,7 +8,7 @@
 * Python
   * [Install Anaconda Enviroment - 1](Python/Install_Anaconda_PythonVirtualEnv.md)
   * [Install Anaconda Enviroment - 2](Python/install_anaconda_pythonvirtualenv.md)
-  
+
 * Steamlit Area
   * [Using Streamlit0](SteamlitArea/using\_streamlit.md)
   * [Using Streamlit1](SteamlitArea/Using\_Streamlit.md)
@@ -44,7 +44,7 @@
 
 * Docker Write-ups
   * [Docker Networking](DockerWU/dockernetworking.md)
-  * [Setup Docker Webservice](DockerWU/SettingUpDockerforWebServices.md)
+  * [Docker Webservice](DockerWU/SettingUpDockerforWebServices.md)
 
 * Future Projects 
   * NIST Agregator
