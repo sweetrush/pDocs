@@ -1,7 +1,15 @@
 # pDocs
 
-The following materials that are share here are all realted to Things such as : 
+Great to have you in bord to my Digital Island 
 
-- Programming 
-- Digital Technology 
-- Setting up Development Enviroments. 
+On here we will share about some of the following areas 
+
+- blockchain 
+- DevOps 
+- Docker Containers 
+- Linux Systems 
+- LLMs and AI 
+- Python Language 
+- Cybersecurity 
+- Streamlit 
+- [more](SUMMARY.md)
