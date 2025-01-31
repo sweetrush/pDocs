@@ -35,6 +35,7 @@
   * [Running LLM Locally](LLMandAI/runningLLMlocally.md)
 * [Blockchain](blockchain/README.md)
   * [Starting with Blockchain](Blockchain/gettingstartwithBlockchain.md)
+  * [Designing Dapp for NFT](Blockchain/buildingADappforNFT.md)
 * [Docker Write-ups](docker-write-ups/README.md)
   * [Docker Networking](DockerWU/dockernetworking.md)
   * [Setup Docker Webservice](DockerWU/SettingUpDockerforWebServices.md)
