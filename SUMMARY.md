@@ -40,6 +40,9 @@
   * [Docker Networking](DockerWU/dockernetworking.md)
   * [Setup Docker Webservice](DockerWU/SettingUpDockerforWebServices.md)
   * [Setup Docker OPenvpn, Tor, Cache](DockerWU/SetupDockerOVPNTORCACHE.md)
+* [Web Development]
+  * [Web Dev Manual](Webdev/Webdevmanual.md)
 * [Future Projects](future-projects/README.md)
   * [NIST Agregator](future-projects/nist-agregator.md)
   * [DataViz For the Pacific](future-projects/dataviz-for-the-pacific.md)
+
