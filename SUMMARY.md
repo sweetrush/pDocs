@@ -29,7 +29,7 @@
   * [Configure Linux Display Manually](LinuxWriteUps/Manual_graphicDisplaySetting_Linux.md)
   * [Seven AmazingCLI Tools](LinuxWriteUps/sevenAmazingCLI_Tools.md)
   * [Accessing Remote Servers with SSH Keys](LinuxWriteUps/SettingupSSHkey_onLinux.md)
-  * [Using X11Forwarding In Linux](LinuxWriteups/UsingX11Forwarding_Linux.md)
+  * [Using X11Forwarding In Linux](LinuxWriteUps/UsingX11Forwarding_Linux.md)
 * [LLM's and AI](llms-and-ai/README.md)
   * [AI and LLM RAG](LLMandAI/RAG_in_AI_n_LLM.md)
   * [Leaning Prompt Engineering](LLMandAI/LearningAboutPromptEngineering.md)
