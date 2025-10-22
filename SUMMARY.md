@@ -24,6 +24,7 @@
   * [NMap Commands](SecArea/useful_Nmap_Commands.md)
   * [Windows Exploit Tools](SecArea/Windows_Exploit_tools.md)
   * [Cybersecurity Archecture](SecArea/Cybersecurity_Architechture_Notes.md)
+  * [Kali Linux Docker with MCP for Pentesting](SecArea/Kali_Docker_MCP_Setup.md)
 * [Linux Write-ups](linux-write-ups/README.md)
   * [Linux Commands and Tips](LinuxWriteUps/LinuxTipsandTools.md)
   * [Configure Linux Display Manually](LinuxWriteUps/Manual_graphicDisplaySetting_Linux.md)
