@@ -25,19 +25,19 @@ Cowrie is a medium to high interaction SSH and Telnet honeypot designed to log b
 
 ### System Requirements
 
-```bash
-# Minimum requirements
+**Minimum requirements:**
+
 - Ubuntu 20.04/22.04 or Debian 11/12
 - 1GB RAM (2GB+ recommended)
 - 10GB disk space (20GB+ for long-term logging)
 - Python 3.9+
 - Internet connection
 
-# Recommended setup
+**Recommended setup:**
+
 - Dedicated VM or VPS (isolated from production)
 - Public IP address (for attracting attackers)
 - Firewall configured properly
-```
 
 ### Initial System Setup
 
@@ -61,10 +61,12 @@ sudo apt install -y \
     virtualenv
 
 # Install additional tools for monitoring
+# (bc is used by the resource-monitoring script in section 10)
 sudo apt install -y \
     rsyslog \
     logrotate \
     jq \
+    bc \
     curl \
     wget
 ```
@@ -135,53 +137,57 @@ nano etc/cowrie.cfg
 # Hostname to display
 hostname = server01
 
-# SSH version to advertise
-ssh_version_string = SSH-2.0_OpenSSH_8.9p1 Ubuntu-3ubuntu0.1
-
-# Telnet prompt
-telnet_prompt = ubuntu login:
-
-# Enable/disable services
-ssh_enabled = true
-telnet_enabled = true
-
-# Ports (must be different from real SSH)
-listen_endpoints = tcp:2222:interface=0.0.0.0
-telnet_endpoints = tcp:2223:interface=0.0.0.0
-
-# Logging verbosity
+# Logging and capture paths
 log_path = var/log/cowrie
 download_path = var/lib/cowrie/downloads
 
-# Enable/disable features
+# Behaviour
 backend = shell
 auth_class = UserDB
-interact_enabled = true
 sftp_enabled = true
 forward_redirect = false
 
 [ssh]
-# SSH banner
-version = SSH-2.0_OpenSSH_8.9p1 Ubuntu-3ubuntu0.1
 enabled = true
 
-# Key file location
+# Ports (must be different from the real SSH daemon)
+listen_endpoints = tcp:2222:interface=0.0.0.0
+
+# Version string presented to clients. The format is defined by RFC 4253 as
+# SSH-<protoversion>-<softwareversion>, so the separator after "SSH-2.0" is a
+# HYPHEN, not an underscore. An underscore is invalid and fingerprints the
+# host as a honeypot immediately.
+version = SSH-2.0-OpenSSH_8.9p1 Ubuntu-3ubuntu0.1
+
+# Host key locations. DSA has been deprecated for years and is disabled in
+# current OpenSSH, so advertising it is another honeypot tell - prefer RSA,
+# ECDSA and Ed25519.
 rsa_public_key = etc/ssh_host_rsa_key.pub
 rsa_private_key = etc/ssh_host_rsa_key
-dsa_public_key = etc/ssh_host_dsa_key.pub
-dsa_private_key = etc/ssh_host_dsa_key
+ecdsa_public_key = etc/ssh_host_ecdsa_key.pub
+ecdsa_private_key = etc/ssh_host_ecdsa_key
+ed25519_public_key = etc/ssh_host_ed25519_key.pub
+ed25519_private_key = etc/ssh_host_ed25519_key
 
 [telnet]
 enabled = true
+listen_endpoints = tcp:2223:interface=0.0.0.0
 
 # Output formats
 [output_jsonlog]
+enabled = true
 logfile = var/log/cowrie/cowrie.json
 epoch_timestamp = false
 
 [output_textlog]
+enabled = true
 logfile = var/log/cowrie/cowrie.log
 ```
+
+**Tip:** Every option above exists in `etc/cowrie.cfg.dist`. Cowrie silently
+ignores keys it does not recognise, so a typo or an invented option fails
+quietly rather than erroring - check your setting against the shipped
+`cowrie.cfg.dist` before assuming it took effect.
 
 ### Configure User Database
 
@@ -193,12 +199,23 @@ nano etc/userdb.txt
 **Example `userdb.txt`:**
 
 ```
-# Format: username:x:password
-# x = accept any password
-# * = reject login
-# ! = fake root access
+# Format: username:uid:password
+#
+# The middle field is the UID and is not used for matching - by convention
+# it is set to 'x'.
+#
+# In the username and password fields:
+#   *          = wildcard, matches anything
+#   !value     = negation, explicitly rejects that value
+#
+# Rules are evaluated in order and the first match wins, so place your
+# denials above your wildcards.
 
+# Reject the real root password, then accept anything else for root
+root:x:!secretpassword
 root:x:*
+
+# Specific credentials that should succeed
 admin:x:admin
 admin:x:123456
 admin:x:password
@@ -209,34 +226,72 @@ test:x:test
 pi:x:raspberry
 postgres:x:postgres
 
+# Accept any password for any remaining username
+*:x:*
+
 # You can add thousands of common credentials
 ```
+
+**Note:** A line such as `root:x:*` accepts *any* password for root - it does
+not reject the login. To make a honeypot selective, list the `!password`
+denials first and let the wildcard catch the rest.
 
 ---
 
 ## 4. Port Forwarding Configuration
 
-To listen on standard ports (22, 23) without running as root, use authbind:
+To listen on standard ports (22, 23) without running as root, use authbind.
 
-### Setup Authbind
+### Step 0: Move the Real SSH Daemon First
+
+**Do this before anything else in this section.** Both methods below take over
+port 22, so if your real `sshd` is still listening there you will lose access
+to the machine.
+
+```bash
+# Configure real SSH on a different port
+sudo nano /etc/ssh/sshd_config
+# Change: Port 22 → Port 2022
+
+sudo systemctl restart sshd
+
+# Verify you can connect on the new port BEFORE continuing.
+# Keep your current session open and test from a second terminal:
+ssh -p 2022 user@your-server
+```
+
+Only once that second connection succeeds should you continue.
+
+### Step 1: Setup Authbind
 
 ```bash
 # Create authbind configuration
 sudo touch /etc/authbind/byport/22
 sudo touch /etc/authbind/byport/23
-sudo chmod 777 /etc/authbind/byport/22
-sudo chmod 777 /etc/authbind/byport/23
+
+# Grant access to the cowrie user only. Do NOT use chmod 777 here - that
+# would let any local user bind the privileged ports.
+sudo chown cowrie:cowrie /etc/authbind/byport/22
+sudo chown cowrie:cowrie /etc/authbind/byport/23
+sudo chmod 770 /etc/authbind/byport/22
+sudo chmod 770 /etc/authbind/byport/23
 
 # Update Cowrie config to listen on standard ports
 nano etc/cowrie.cfg
 ```
 
 ```ini
+[ssh]
 listen_endpoints = tcp:22:interface=0.0.0.0
-telnet_endpoints = tcp:23:interface=0.0.0.0
+
+[telnet]
+listen_endpoints = tcp:23:interface=0.0.0.0
 ```
 
 ### Alternative: IPTables Port Forwarding
+
+With this method Cowrie keeps listening on 2222/2223 and the kernel redirects
+the privileged ports to it, so no authbind is needed.
 
 ```bash
 # Forward port 22 to 2222 (Cowrie SSH)
@@ -250,18 +305,8 @@ sudo apt install iptables-persistent
 sudo netfilter-persistent save
 ```
 
-**Important:** Make sure you have alternative SSH access (different port) before applying these rules!
-
-```bash
-# FIRST: Configure real SSH on different port
-sudo nano /etc/ssh/sshd_config
-# Change: Port 22 → Port 2022
-
-sudo systemctl restart sshd
-
-# Verify you can connect on new port before continuing
-ssh -p 2022 user@your-server
-```
+**Note:** `REDIRECT` in the `nat` PREROUTING chain only affects forwarded
+traffic, not connections originating on the honeypot itself.
 
 ---
 
@@ -411,12 +456,17 @@ Create `/etc/logrotate.d/cowrie`:
     delaycompress
     notifempty
     missingok
+    copytruncate
     create 0644 cowrie cowrie
-    postrotate
-        /home/cowrie/cowrie/bin/cowrie restart > /dev/null
-    endscript
 }
 ```
+
+**Why `copytruncate` and not a `postrotate` restart:** restarting Cowrie to
+release the log file also tears down every live session, discarding the
+attacker interaction you deployed the honeypot to capture. `copytruncate`
+rotates the file underneath the running process instead. Note that Cowrie
+already rotates its own JSON log daily, so check `var/log/cowrie/` before
+adding this - you may not need logrotate for the JSON output at all.
 
 ---
 
@@ -458,19 +508,43 @@ sudo apt update && sudo apt install filebeat
 
 ```yaml
 filebeat.inputs:
-- type: log
+# The "log" input and the json.* options under it are deprecated in the 8.x
+# line installed above; "filestream" with a parsers block is the current form.
+- type: filestream
+  id: cowrie-json
   enabled: true
   paths:
     - /home/cowrie/cowrie/var/log/cowrie/cowrie.json
-  json.keys_under_root: true
-  json.add_error_key: true
+  parsers:
+    - ndjson:
+        target: ""
+        add_error_key: true
 
 output.elasticsearch:
-  hosts: ["localhost:9200"]
+  # Elasticsearch 8.x enables TLS and authentication by default, so plain
+  # http:// with no credentials will be refused. Use https:// and point
+  # Filebeat at the CA the cluster generated on first start.
+  hosts: ["https://localhost:9200"]
   index: "cowrie-%{+yyyy.MM.dd}"
+  username: "elastic"
+  password: "${ES_PASSWORD}"
+  ssl.certificate_authorities: ["/etc/filebeat/certs/http_ca.crt"]
 
 setup.template.name: "cowrie"
 setup.template.pattern: "cowrie-*"
+```
+
+Copy the CA certificate out of Elasticsearch and store the password in
+Filebeat's keystore rather than in the config file:
+
+```bash
+# Copy the CA generated by Elasticsearch on first start
+sudo mkdir -p /etc/filebeat/certs
+sudo cp /etc/elasticsearch/certs/http_ca.crt /etc/filebeat/certs/
+
+# Store the password in the keystore instead of in plaintext
+sudo filebeat keystore create
+sudo filebeat keystore add ES_PASSWORD
 ```
 
 **Start Filebeat:**
@@ -611,13 +685,23 @@ Create alert script (`alert.sh`):
 
 ```bash
 #!/bin/bash
+set -euo pipefail
 
 LOGFILE="/home/cowrie/cowrie/var/log/cowrie/cowrie.json"
 EMAIL="admin@example.com"
 THRESHOLD=50
 
-# Count failed logins in last hour
-COUNT=$(tail -n 1000 "$LOGFILE" | jq -r 'select(.eventid=="cowrie.login.failed")' | wc -l)
+# Cutoff timestamp for one hour ago, in the ISO-8601 form Cowrie writes
+# when epoch_timestamp = false.
+CUTOFF=$(date -u -d '1 hour ago' +%Y-%m-%dT%H:%M:%S)
+
+# Count failed logins newer than the cutoff. Filtering on the timestamp is
+# what actually bounds this to an hour - a plain "tail -n 1000" would count
+# a fixed number of LINES regardless of how long they took to accumulate,
+# under-reporting during a flood and over-reporting during quiet periods.
+COUNT=$(jq -r --arg cutoff "$CUTOFF" \
+    'select(.eventid == "cowrie.login.failed" and .timestamp > $cutoff) | .timestamp' \
+    "$LOGFILE" 2>/dev/null | wc -l)
 
 if [ "$COUNT" -gt "$THRESHOLD" ]; then
     SUBJECT="Cowrie Alert: High Attack Activity"
@@ -626,6 +710,11 @@ if [ "$COUNT" -gt "$THRESHOLD" ]; then
     echo "$MESSAGE" | mail -s "$SUBJECT" "$EMAIL"
 fi
 ```
+
+**Note:** On a busy honeypot `cowrie.json` grows quickly and rescanning the
+whole file every hour gets expensive. Once the file is large, point this at
+the current day's rotated log or feed events into a database (see section 6)
+instead of re-reading the full JSON log.
 
 Add to crontab:
 
@@ -733,17 +822,34 @@ verify_cert = true
 
 ```bash
 # Use separate network segment
-# Configure firewall to restrict outbound connections
+
+# CRITICAL: allow your real SSH port BEFORE enabling the firewall.
+# If you moved sshd to 2022 in section 4, this is the rule that keeps
+# you from locking yourself out of the box.
+sudo ufw allow 2022/tcp
+
+# Allow inbound on the honeypot ports
+sudo ufw allow 22/tcp
+sudo ufw allow 23/tcp
+
+# Restrict outbound connections
 sudo ufw default deny outgoing
 sudo ufw allow out 53/udp  # DNS
 sudo ufw allow out 80/tcp  # HTTP (for updates only)
 sudo ufw allow out 443/tcp # HTTPS (for updates only)
+
+# Enable last, once the rules above are in place
 sudo ufw enable
 
-# Allow inbound only on honeypot ports
-sudo ufw allow 22/tcp
-sudo ufw allow 23/tcp
+# Confirm your admin port is listed before closing your current session
+sudo ufw status verbose
 ```
+
+**Warning:** Keep your existing SSH session open and verify you can open a
+second connection on port 2022 before disconnecting. Restricting outbound
+traffic will also break any tooling that needs ports other than 53/80/443
+(for example, sending logs to a remote Elasticsearch or Splunk instance -
+add explicit `ufw allow out` rules for those).
 
 ### Monitor System Resources
 
@@ -928,14 +1034,27 @@ sudo netstat -tulpn | grep python
 ### High Resource Usage
 
 ```bash
-# Limit log file size
-# Edit cowrie.cfg
-[output_jsonlog]
-rotate_size = 100M
-rotate_count = 5
-
-# Check for log rotation
+# Check log sizes first
 ls -lh var/log/cowrie/
+du -sh var/log/cowrie/ var/lib/cowrie/downloads/
+```
+
+Cowrie has no `rotate_size` or `rotate_count` settings - size-based rotation
+is handled outside Cowrie, via the logrotate config in section 6. To reduce
+what gets written in the first place, disable output plugins you are not
+using:
+
+```ini
+# Edit cowrie.cfg - turn off the text log if you are consuming JSON
+[output_textlog]
+enabled = false
+```
+
+Downloaded malware samples are usually the real disk consumer. Prune them on
+a schedule once they have been analysed and archived:
+
+```bash
+find ~/cowrie/var/lib/cowrie/downloads/ -type f -mtime +30 -delete
 ```
 
 ---
