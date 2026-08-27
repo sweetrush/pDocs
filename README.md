@@ -21,6 +21,7 @@ Explore the full documentation through the [Table of Contents](./SUMMARY.md)
 - **[Windows Exploit Tools](SecArea/Windows_Exploit_tools.md)** - Windows-specific security tools
 - **[PowerShell Security](SecArea/Powershelling_in_Windows.md)** - PowerShell for security operations
 - **[Cybersecurity Architecture](SecArea/Cybersecurity_Architechture_Notes.md)** - Security architecture concepts
+- **[Tailscale Mesh VPN & Windows Deployment](SecArea/Tailscale_Windows_Setup.md)** - WireGuard-based zero-trust networking, Windows rollout, and tailnet hardening
 
 ### Linux System Administration
 - **[Advanced SSH Connectivity](LinuxWriteUps/EnhancedSSH_Connectivity.md)** - SSH config, tunneling, jump hosts, multiplexing, and modern techniques
@@ -71,6 +72,8 @@ Explore the full documentation through the [Table of Contents](./SUMMARY.md)
 - **Advanced SSH Connectivity** - Modern SSH techniques including config management, Ed25519 keys, jump hosts, port forwarding, connection multiplexing, and security hardening
 
 - **Kali Linux Docker with MCP** - Complete setup for containerized pentesting environment with AI integration through Model Context Protocol
+
+- **Tailscale Mesh VPN & Windows Deployment** - How Tailscale works, silent deployment on Windows with unattended mode and registry policy, plus ACL, tagging, and key-hygiene hardening
 
 ## Repository Structure
 
@@ -124,6 +127,6 @@ For questions or suggestions, please open an issue on this repository.
 
 ---
 
-**Last Updated:** 2025-11-04
+**Last Updated:** 2026-08-27
 **Total Guides:** 40+
 **Repository Size:** ~420KB

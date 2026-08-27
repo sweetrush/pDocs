@@ -26,6 +26,7 @@
   * [Cybersecurity Archecture](SecArea/Cybersecurity_Architechture_Notes.md)
   * [Kali Linux Docker with MCP for Pentesting](SecArea/Kali_Docker_MCP_Setup.md)
   * [Cowrie Honeypot Setup and Monitoring](SecArea/Cowrie_Honeypot_Setup.md)
+  * [Tailscale Mesh VPN and Windows Deployment](SecArea/Tailscale_Windows_Setup.md)
 * [Linux Write-ups](linux-write-ups/README.md)
   * [Linux Commands and Tips](LinuxWriteUps/LinuxTipsandTools.md)
   * [Configure Linux Display Manually](LinuxWriteUps/Manual_graphicDisplaySetting_Linux.md)
