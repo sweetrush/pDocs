@@ -44,6 +44,7 @@ Explore the full documentation through the [Table of Contents](./SUMMARY.md)
 - **[RAG in AI/LLM](LLMandAI/RAG_in_AI_n_LLM.md)** - Retrieval-Augmented Generation concepts and implementation
 - **[Prompt Engineering](LLMandAI/LearningAboutPromptEngineering.md)** - AI prompt design techniques
 - **[Running LLMs Locally](LLMandAI/runningLLMlocally.md)** - Self-hosted AI models
+- **[Google Home + Hermes Agent](LLMandAI/Hermes_Agent_GoogleHome_Setup.md)** - Driving an AI agent from a smart speaker via Home Assistant
 
 ### Python Development
 - **[Anaconda Setup](Python/Install_Anaconda_PythonVirtualEnv.md)** - Python virtual environments with Anaconda
@@ -74,6 +75,8 @@ Explore the full documentation through the [Table of Contents](./SUMMARY.md)
 - **Kali Linux Docker with MCP** - Complete setup for containerized pentesting environment with AI integration through Model Context Protocol
 
 - **Tailscale Mesh VPN & Windows Deployment** - How Tailscale works, silent deployment on Windows with unattended mode and registry policy, plus ACL, tagging, and key-hygiene hardening
+
+- **Google Home + Hermes Agent** - Wiring a Google Home speaker to the Hermes AI agent through Home Assistant, including what Google's removal of Conversational Actions does and does not allow
 
 ## Repository Structure
 
