@@ -38,6 +38,7 @@
   * [AI and LLM RAG](LLMandAI/RAG_in_AI_n_LLM.md)
   * [Leaning Prompt Engineering](LLMandAI/LearningAboutPromptEngineering.md)
   * [Running LLM Locally](LLMandAI/runningLLMlocally.md)
+  * [Connecting Google Home to Hermes Agent](LLMandAI/Hermes_Agent_GoogleHome_Setup.md)
 * [Blockchain](blockchain/README.md)
   * [Starting with Blockchain](Blockchain/gettingstartwithBlockchain.md)
   * [Designing Dapp for NFT](Blockchain/buildingADappforNFT.md)
