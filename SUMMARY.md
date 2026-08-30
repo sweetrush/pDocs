@@ -48,6 +48,7 @@
   * [Setup Docker OPenvpn, Tor, Cache](DockerWU/SetupDockerOVPNTORCACHE.md)
 * Web Development
   * [Web Dev Manual](Webdev/Webdevmanual.md)
+  * [Instagram Auto-Posting with the Facebook Graph API](Webdev/Instagram_AutoPost_GraphAPI.md)
 * [Future Projects](future-projects/README.md)
   * [NIST Agregator](future-projects/nist-agregator.md)
   * [DataViz For the Pacific](future-projects/dataviz-for-the-pacific.md)

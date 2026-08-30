@@ -51,6 +51,7 @@ Explore the full documentation through the [Table of Contents](./SUMMARY.md)
 
 ### Web Development
 - **[Web Development Manual](Webdev/Webdevmanual.md)** - Web development guide
+- **[Instagram Auto-Posting via Graph API](Webdev/Instagram_AutoPost_GraphAPI.md)** - Publishing to Instagram and Facebook Pages from the command line, scheduling, and rate limits
 - **[Using Streamlit](SteamlitArea/Using_Streamlit.md)** - Building web apps with Streamlit
 
 ### DevOps
@@ -77,6 +78,8 @@ Explore the full documentation through the [Table of Contents](./SUMMARY.md)
 - **Tailscale Mesh VPN & Windows Deployment** - How Tailscale works, silent deployment on Windows with unattended mode and registry policy, plus ACL, tagging, and key-hygiene hardening
 
 - **Google Home + Hermes Agent** - Wiring a Google Home speaker to the Hermes AI agent through Home Assistant, including what Google's removal of Conversational Actions does and does not allow
+
+- **Instagram Auto-Posting via Graph API** - Container-based publishing from curl, quota-aware scripting, scheduling with cron and systemd, and the wider Facebook Graph API surface
 
 ## Repository Structure
 
